@@ -108,6 +108,8 @@ function(ADD_CMOCKA_TEST _TARGET_NAME)
         )
     endif()
 
+    target_compile_options(${_TARGET_NAME} PUBLIC -fno-omit-frame-pointer)
+
     if (DEFINED _add_cmocka_test_LINK_OPTIONS)
         set_target_properties(${_TARGET_NAME}
             PROPERTIES LINK_FLAGS
