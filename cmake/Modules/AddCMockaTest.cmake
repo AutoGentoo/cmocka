@@ -75,10 +75,11 @@ function(ADD_CMOCKA_TEST _TARGET_NAME)
     )
 
     set(multi_value_arguments
-        SOURCES
-        COMPILE_OPTIONS
-        LINK_LIBRARIES
-        LINK_OPTIONS
+            SOURCES
+            COMPILE_OPTIONS
+            LINK_LIBRARIES
+            LINK_OPTIONS
+            WORKING_DIRECTORY
     )
 
     cmake_parse_arguments(_add_cmocka_test
@@ -114,7 +115,8 @@ function(ADD_CMOCKA_TEST _TARGET_NAME)
     endif()
 
     add_test(${_TARGET_NAME}
-        ${TARGET_SYSTEM_EMULATOR} ${_TARGET_NAME}
+            ${TARGET_SYSTEM_EMULATOR} ${_TARGET_NAME}
+            WORKING_DIRECTORY ${_add_cmocka_test_WORKING_DIRECTORY}
     )
 
 endfunction (ADD_CMOCKA_TEST)
