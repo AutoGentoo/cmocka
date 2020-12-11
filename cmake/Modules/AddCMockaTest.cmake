@@ -114,8 +114,8 @@ function(ADD_CMOCKA_TEST _TARGET_NAME)
         )
     endif()
 
-    add_test(${_TARGET_NAME}
-            ${TARGET_SYSTEM_EMULATOR} ${_TARGET_NAME}
+    add_test(NAME ${_TARGET_NAME}
+            COMMAND ${_TARGET_NAME}
             WORKING_DIRECTORY ${_add_cmocka_test_WORKING_DIRECTORY}
     )
 
