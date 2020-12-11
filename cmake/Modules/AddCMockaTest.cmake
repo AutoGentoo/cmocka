@@ -80,6 +80,7 @@ function(ADD_CMOCKA_TEST _TARGET_NAME)
             LINK_LIBRARIES
             LINK_OPTIONS
             WORKING_DIRECTORY
+            ENVIRONMENT
     )
 
     cmake_parse_arguments(_add_cmocka_test
@@ -115,7 +116,9 @@ function(ADD_CMOCKA_TEST _TARGET_NAME)
     endif()
 
     add_test(NAME ${_TARGET_NAME}
-            COMMAND ${_TARGET_NAME}
+            COMMAND ${CMAKE_COMMAND} -E env
+                ${_add_cmocka_test_ENVIRONMENT}
+                $<TARGET_FILE:${_TARGET_NAME}>
             WORKING_DIRECTORY ${_add_cmocka_test_WORKING_DIRECTORY}
     )
 
