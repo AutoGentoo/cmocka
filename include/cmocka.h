@@ -17,6 +17,9 @@
 #ifndef CMOCKA_H_
 #define CMOCKA_H_
 
+#include <stdint.h>
+#include <setjmp.h>
+
 #ifdef _WIN32
 # ifdef _MSC_VER
 
