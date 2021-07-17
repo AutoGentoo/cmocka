@@ -59,7 +59,6 @@
 #
 
 enable_testing()
-include(CTest)
 
 if (CMAKE_CROSSCOMPILING)
     if (WIN32)
