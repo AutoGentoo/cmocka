@@ -20,4 +20,3 @@ set(LIBRARY_SOVERSION "0")
 # check subdirectories
 add_subdirectory(include)
 add_subdirectory(src)
-# add_subdirectory(doc)
